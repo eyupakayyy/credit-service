@@ -66,7 +66,6 @@ public final class JwtUtil extends Utility {
     if (customToken != null && !customToken.isBlank()) {
       return customToken;
     }
-
     return null;
   }
 }

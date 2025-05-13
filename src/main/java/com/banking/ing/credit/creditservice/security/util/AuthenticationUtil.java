@@ -20,12 +20,12 @@ public final class AuthenticationUtil extends Utility {
   }
 
   public static String getCurrentUsername() {
-    Authentication authentication = getContext().getAuthentication();
+    Authentication authentication = getAuthentication();
     return (authentication != null) ? authentication.getName() : null;
   }
 
   public static boolean isCurrentUserAdmin() {
-    Authentication authentication = getContext().getAuthentication();
+    Authentication authentication = getAuthentication();
     if (authentication == null) {
       return false;
     }

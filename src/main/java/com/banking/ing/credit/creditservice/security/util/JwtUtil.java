@@ -1,9 +1,11 @@
 package com.banking.ing.credit.creditservice.security.util;
 
+import static io.jsonwebtoken.SignatureAlgorithm.HS256;
+import static java.nio.charset.StandardCharsets.UTF_8;
+
 import com.banking.ing.credit.creditservice.common.util.base.Utility;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
 import jakarta.servlet.http.HttpServletRequest;
 import java.nio.charset.StandardCharsets;
@@ -26,7 +28,7 @@ public final class JwtUtil extends Utility {
         .setSubject(userDetails.getUsername())
         .setIssuedAt(new Date())
         .setExpiration(Date.from(LocalDateTime.now().plusMinutes(10).atZone(ZoneId.systemDefault()).toInstant()))
-        .signWith(getSignKey(secretKey), SignatureAlgorithm.HS256)
+        .signWith(getSignKey(secretKey), HS256)
         .compact();
   }
 
@@ -52,7 +54,7 @@ public final class JwtUtil extends Utility {
   }
 
   private static Key getSignKey(final String secretKey) {
-    byte[] keyBytes = secretKey.getBytes(StandardCharsets.UTF_8);
+    byte[] keyBytes = secretKey.getBytes(UTF_8);
     return Keys.hmacShaKeyFor(keyBytes);
   }
 

@@ -141,7 +141,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"username\": \"customer11\",\n    \"password\": \"customer11_pass\",\n    \"role\": \"CUSTOMER\"\n}",
+							"raw": "{\n    \"username\": \"Eyup\",\n    \"password\": \"e123\",\n    \"role\": \"CUSTOMER\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -289,7 +289,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"customerId\": 6,\n    \"amount\": \"100000\",\n    \"installmentCount\": 9,\n    \"interestRate\": 0.3\n}",
+							"raw": "{\n    \"customerId\": 6,\n    \"amount\": \"300000\",\n    \"installmentCount\": 6,\n    \"interestRate\": 0.5\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -334,7 +334,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{service}}/v1/credit/installments/5",
+							"raw": "{{service}}/v1/credit/installments/6",
 							"host": [
 								"{{service}}"
 							],
@@ -342,7 +342,7 @@
 								"v1",
 								"credit",
 								"installments",
-								"5"
+								"6"
 							]
 						}
 					},
@@ -354,7 +354,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{service}}/v1/credit/installments/6/5",
+							"raw": "{{service}}/v1/credit/installments/6/6",
 							"host": [
 								"{{service}}"
 							],
@@ -363,7 +363,7 @@
 								"credit",
 								"installments",
 								"6",
-								"5"
+								"6"
 							]
 						}
 					},
@@ -376,7 +376,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"customerId\": 6,\n    \"loanId\": 5,\n    \"amount\": 5000\n}",
+							"raw": "{\n    \"customerId\": 6,\n    \"loanId\": 7,\n    \"amount\": 240000\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -408,13 +408,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{service}}/v1/user/2",
+							"raw": "{{service}}/v1/installment/2",
 							"host": [
 								"{{service}}"
 							],
 							"path": [
 								"v1",
-								"user",
+								"installment",
 								"2"
 							]
 						}
@@ -447,13 +447,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{service}}/v1/user",
+							"raw": "{{service}}/v1/installment",
 							"host": [
 								"{{service}}"
 							],
 							"path": [
 								"v1",
-								"user"
+								"installment"
 							]
 						}
 					},
@@ -601,14 +601,15 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{service}}/v1/customer-credit/2",
+							"raw": "{{service}}/v1/customer-credit/customer/4",
 							"host": [
 								"{{service}}"
 							],
 							"path": [
 								"v1",
 								"customer-credit",
-								"2"
+								"customer",
+								"4"
 							]
 						}
 					},

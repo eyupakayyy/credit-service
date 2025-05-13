@@ -1,0 +1,17 @@
+server:
+  shutdown: graceful
+
+spring:
+  application:
+    name: credit-service
+  config:
+    import: classpath:profiles/${spring.profiles.active:local}/
+  datasource:
+    url: ${db.url}
+    driver-class-name: ${db.class}
+    username: ${db.username}
+    password: ${db.password}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false

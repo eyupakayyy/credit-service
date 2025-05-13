@@ -12,6 +12,7 @@ import static com.banking.ing.credit.creditservice.common.constants.CommonApiMes
 import static com.banking.ing.credit.creditservice.common.constants.CommonApiMessages.MESSAGE_DEFAULT_RESOURCE_NOT_FOUND;
 import static com.banking.ing.credit.creditservice.common.constants.CommonApiMessages.MESSAGE_NO_ACTIVE_USER_FOUND_MIGHT_BE_DELETED;
 import static com.banking.ing.credit.creditservice.common.constants.CommonApiMessages.MESSAGE_UNEXPECTED_ERROR;
+import static com.banking.ing.credit.creditservice.common.constants.InfrastructureConstants.BASE_SERVICE_PACKAGE;
 import static com.banking.ing.credit.creditservice.common.util.ExceptionHandlerUtil.handleResponse;
 import static org.springframework.http.HttpStatus.BAD_REQUEST;
 import static org.springframework.http.HttpStatus.CONFLICT;
@@ -46,7 +47,7 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
 @RequiredArgsConstructor
-@ControllerAdvice(basePackages = "com.banking.ing.credit.creditservice")
+@ControllerAdvice(basePackages = BASE_SERVICE_PACKAGE)
 public class DefaultGlobalExceptionHandler {
 
   private final Gson gson;
